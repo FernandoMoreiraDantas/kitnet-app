@@ -26,16 +26,7 @@ class Home extends React.Component{
                 <p className="lead">Em breve será criado o layout de informaçãoes</p>
                 <hr className="my-4"/>
                 <p>E essa é sua área administrativa, utilize um dos menus ou botões abaixo para navegar pelo sistema.</p>
-                <p className="lead">
-                    <a className="btn btn-primary btn-lg" 
-                      role="button">
-                        <i className="pi pi-users"></i> Gerar Contrato
-                    </a>
-                    <a className="btn btn-danger btn-lg" 
-                       role="button">
-                        <i className="pi pi-money-bill"></i> Cadastrar Lançamento
-                    </a>
-                </p>
+               
           </div>
             )
     }  

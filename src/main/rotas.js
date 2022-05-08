@@ -1,14 +1,12 @@
 import React from "react";
 import {Route,Switch,HashRouter,Redirect} from "react-router-dom";
-import CadastroUsuario from "../views/cadastroUsuarios";
+import manterAlugueis from "../views/alugueis/manterAlugueis";
 import Home from "../views/home";
-import Login from "../views/login";
-import ConsultaLancamentos from "../views/lancamentos/consultaLancamento";
-import CadastroLancamentos from "../views/cadastro-lancamentos";
-import LandingPage from '../views/landingPage'
-
+import manterInquilinos from "../views/inquilinos/manterInquilinos";
+import manterKitnets from "../views/kitnets/manterKitnets";
+import Login from "../views/login"
 import { AuthConsumer } from "./provedorAutenticacao";
-import manterUsuarios from "../views/usuarios/manterUsuarios";
+
 
 
 function RotaAutenticada({component:Component, isUsuarioAutenticado, ...props}){
@@ -29,13 +27,14 @@ function Rotas(props){
     return(
         <HashRouter>
             <Switch>
-                <Route exact path={"/"}component={LandingPage}></Route>
+                <Route exact path={"/"}component={Login}></Route>
                 <Route exact path={"/login"} component={Login}/>
-                <Route exact path={"/cadastro-usuarios/:cpf?"} component={CadastroUsuario}/>
-                
+                            
                 <RotaAutenticada isUsuarioAutenticado={props.isUsuarioAutenticado} path={"/home"} component={Home}/>
-                <RotaAutenticada isUsuarioAutenticado={props.isUsuarioAutenticado} path={"/manter-usuarios"} component={manterUsuarios}/>
-                <RotaAutenticada isUsuarioAutenticado={props.isUsuarioAutenticado} path={"/cadastro-lancamentos/:id?"} component={CadastroLancamentos}/>
+                <RotaAutenticada isUsuarioAutenticado={props.isUsuarioAutenticado} path={"/manter-inquilinos"} component={manterInquilinos}/>
+                <RotaAutenticada isUsuarioAutenticado={props.isUsuarioAutenticado} path={"/manter-kitnets"} component={manterKitnets}/>
+                <RotaAutenticada isUsuarioAutenticado={props.isUsuarioAutenticado} path={"/manter-alugueis"} component={manterAlugueis}/>
+         
             </Switch>
         </HashRouter>
     )

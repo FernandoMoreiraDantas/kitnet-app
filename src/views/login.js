@@ -14,6 +14,10 @@ class Login extends React.Component{
         this.service = new UsuarioService();
     }
 
+    componentDidMount() {
+       this.context.encerrarSessao();
+    }
+
     state={
         cpf:'',
         senha:''
@@ -37,9 +41,6 @@ class Login extends React.Component{
             }).catch(erro => {
                 mensagemErro(erro.response.data)
             })
-    }
-    prepareCadastrar = () =>{
-      this.props.history.push('/cadastro-usuarios')
     }
 
     render(){
@@ -76,13 +77,10 @@ class Login extends React.Component{
                                                     </FormGroup>
                                                     <br/>
                                                     <button onClick={this.entrar} 
-                                                            className="btn btn-success">
+                                                            className="btn btn-success">                                                                
                                                                <i className="pi pi-sign-in"/> Entrar
                                                     </button>
-                                                    <button onClick={this.prepareCadastrar} 
-                                                            className="btn btn-danger">
-                                                                 <i className="pi pi-plus"/> Cadastrar
-                                                    </button>
+                                                    
                                                 </fieldset>
                                             </div>
                                     </div>

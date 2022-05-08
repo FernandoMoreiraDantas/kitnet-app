@@ -20,9 +20,9 @@ function NavBar(props) {
                 <div className="collapse navbar-collapse" id="navbarResponsive">
                     <ul className="navbar-nav">
                         <NavBarItem render={props.isUsuarioAutenticado} href="#/home" label="Home" />
-                        <NavBarItem render={props.isUsuarioAutenticado} href="#/manter-usuarios" label="Usuários" />
-                        <NavBarItem render={props.isUsuarioAutenticado}  label="Imóveis" />
-                        <NavBarItem render={props.isUsuarioAutenticado}  label="Contratos" />
+                        <NavBarItem render={props.isUsuarioAutenticado} href="#/manter-inquilinos" label="Inquilinos" />
+                        <NavBarItem render={props.isUsuarioAutenticado} href="#/manter-kitnets" label="KitNets" />
+                        <NavBarItem render={props.isUsuarioAutenticado} href="#/manter-alugueis" label="Alugueis" />
                         <NavBarItem render={props.isUsuarioAutenticado} onClick={props.deslogar} href="#login" label="Sair" />
                     </ul>
                 </div>
